@@ -1,4 +1,3 @@
-// Added the API Key to a different file to be ignored by git
 const apiKey = "aCsseKRnikY1LGoyVn5+pA==mAIPwmBlSbtKIiJE";
 
 const requestOptions = {
