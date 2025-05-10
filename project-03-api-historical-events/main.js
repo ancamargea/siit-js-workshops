@@ -1,6 +1,6 @@
 // Added the API Key to a different file to be ignored by git
 // const apiKey = "";
-import apiKey from "./config.js";
+import apiKey from "./config";
 
 const requestOptions = {
   year: "1618",
@@ -45,6 +45,7 @@ async function getHistoricalEvents(apiKey, options) {
   const data = await response.json();
   return data;
 }
+
 // Create an ordered list in the specified parent element, displaying the events list given as a parameter
 // parentElem: DOM Element reference
 // Before creating the list, all the child nodes of the parent elem will be deleted
