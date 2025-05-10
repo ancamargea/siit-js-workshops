@@ -8,18 +8,18 @@ const requestOptions = {
   // text: "",
 };
 
-function buildQueryString(options) {
-  const params = new URLSearchParams();
-
-  if (options.year) params.append("year", options.year);
-  if (options.month) params.append("month", options.month);
-  if (options.day) params.append("day", options.day);
-  if (options.text) params.append("text", options.text);
-
-  return params.toString();
-}
-
 async function getHistoricalEvents(apiKey, options) {
+  function buildQueryString(options) {
+    const params = new URLSearchParams();
+
+    if (options.year) params.append("year", options.year);
+    if (options.month) params.append("month", options.month);
+    if (options.day) params.append("day", options.day);
+    if (options.text) params.append("text", options.text);
+
+    return params.toString();
+  }
+
   const apiUrl = "https://api.api-ninjas.com/v1/historicalevents";
   const query = buildQueryString(options);
   const url = `${apiUrl}?${query}`;
