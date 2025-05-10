@@ -1,17 +1,28 @@
 // Added the API Key to a different file to be ignored by git
-// const apiKey = "";
-import apiKey from "./config";
+const apiKey = "aCsseKRnikY1LGoyVn5+pA==mAIPwmBlSbtKIiJE";
 
 const requestOptions = {
-  year: "1618",
-  month: "",
-  day: "",
-  text: "",
+  year: "1099",
+  // month: "",
+  // day: "",
+  // text: "",
 };
+
+function buildQueryString(options) {
+  const params = new URLSearchParams();
+
+  if (options.year) params.append("year", options.year);
+  if (options.month) params.append("month", options.month);
+  if (options.day) params.append("day", options.day);
+  if (options.text) params.append("text", options.text);
+
+  return params.toString();
+}
 
 async function getHistoricalEvents(apiKey, options) {
   const apiUrl = "https://api.api-ninjas.com/v1/historicalevents";
-  const url = `${apiUrl}?year=${options.year}&month=${options.month}&day=${options.day}&text=${options.text}`;
+  const query = buildQueryString(options);
+  const url = `${apiUrl}?${query}`;
 
   const response = await fetch(url, {
     method: "GET",
