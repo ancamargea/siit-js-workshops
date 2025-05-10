@@ -1,4 +1,4 @@
-// Added this to a different file to be ignored by git
+// Added the API Key to a different file to be ignored by git
 // const apiKey = "";
 import apiKey from "./config.js";
 
